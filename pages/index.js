@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function HelloPage() {
      // Declare state variable to hold data returned by fetch API:
-    const [data, setData] = useState({});
+    const [data, setData] = useState();
 
     const fetchHello = () => {
         // Use fetch API to fetch data at "api/hello" endpoint:
@@ -15,13 +15,13 @@ function HelloPage() {
     }
 
     return (
-        <div>
+        <div className="hello-page">
             {/* When button is clicked, invoke fetchHello function to fetch data: */}
-            <button onClick={fetchHello}>
-                <h1>Hello</h1>
+            <button onClick={fetchHello} className="hello-button">
+                <h1 className="hello-button-title">Hello</h1>
             </button>
             {/* Render data in state variable to screen by stringifying object: */}
-            <div>{JSON.stringify(data)}</div>
+            <p>{JSON.stringify(data)}</p>
         </div>
     )
 }
